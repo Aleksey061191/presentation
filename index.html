@@ -14,11 +14,253 @@
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
-		<div class="reveal">
+		<div style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9) ), url('../images/owasp-top-10.jpg'); background-size: cover;" class="reveal">
+
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h1>OWASP Top Ten</h1>
+				</section>
+				<section data-auto-animate data-auto-animate-unmatched="fade">
+					<h3>What is OWASP?</h3>
+					<p style="text-align: start;">Open Web Application Security Project (OWASP) is a publicly shared standard awareness document for developers of the ten most critical web application security vulnerabilities, according to the Foundation. OWASP understands that a security vulnerability is any weakness that enables a malevolent actor to cause harm and losses to an application’s stakeholders (owners, users, etc.).</p>
+				</section>
+
+                <section data-auto-animate>
+                    <h3 style="text-align: start; margin-left: 40px;">A list of the top ten web application vulnerabilities</h3>
+                    <ul>
+                        <li>Determined by OWASP and the security
+                            community at large</li>
+						<li>Released every few years</li>
+						<li>Most recently released in 2021</li>
+                        <li>First release in 2003</li>
+                    </ul>
+                </section>
+
+                <section data-auto-animate>
+                    <h3>OWASP Top Ten 2021</h3>
+                    <ul style="list-style: none;">
+                        <li>A1 Broken Access Control</li>
+						<li>A2 Cryptographic Failures</li>
+						<li>A3 Injection</li>
+                        <li>A4 Insecure Design</li>
+                        <li>A5 Security Misconfiguration</li>
+                        <li>A6 Vulnerable and Outdated Components</li>
+                        <li>A7 Identification and Authentication Failures</li>
+                        <li>A8 Software and Data Integrity Failures</li>
+                        <li>A9 Security Logging and Monitoring Failures</li>
+                        <li>A10 Server-Side Request Forgery (SSRF)</li>
+                    </ul>
+                </section>
+
+				<section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A1 Broken Access Control</h3>
+                        <p>Access control refers to the enforcement of restrictions on authenticated users to perform actions outside of their level of permission. Broken access control occurs when such restrictions are not correctly enforced. This can lead to unauthorized access to sensitive information, as well as its modification or destruction.</p>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A1 Broken Access Control</h3>
+                        <p>Access control must be implemented in code on a trusted server or a server-less API to be effective. This reduces the chance of an attacker tampering with the access control check or metadata.</p>
+					</section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A2 Cryptographic Failures</h3>
+                        <p>This type of failure applies to the protection and secrecy of data in transit and at rest. Such data typically include authentication details, such as usernames and passwords, but also personally identifiable information (PII) such as personal and financial information, health records, business secrets, and more. </p>
+
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A2 Cryptographic Failures</h3>
+                        <h4>Prevention:</h4>
+						<ul>
+							<li>Don’t store data unless you
+                                need to!</li>
+							<li>Encrypt at rest and in transit</li>
+							<li>Use strong crypto</li>
+						</ul>
+					</section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A3 Injection</h3>
+						<p>An injection attack refers to untrusted data by an application that forces it to execute commands. Such data or malicious code is inserted by an attacker and can compromise data or the whole application. The most common injection attacks are SQL injections and cross-site scripting (XSS) attacks, but code injections, command injections, CCS injections, and others.</p>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A3 Injection</h3>
+                        <h4>Prevention:</h4>
+						<ul>
+							<li>SQL statements combine code and data
+                                => Separate code and data</li>
+							<li>Parameterise your queries</li>
+							<li>Validate which data can be entered</li>
+                            <li>Escape special characters</li>
+						</ul>
+					</section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A4 Insecure Design</h3>
+						<p>Insecure design refers, in part, to the lack of security controls and business risk profiling in the development of software, and thereby the lack of proper determination of the degree of security design that is needed.</p>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 30px;">A4 Insecure Design</h3>
+                        <h4>Prevention:</h4>
+						<ul>
+							<li>Implement a secure development lifecycle with application security experts to assess the design security and privacy-related requirements</li>
+							<li>Introduce and use a secure design pattern library or paved road ready to use components</li>
+							<li>Apply threat modeling methods to critical authentication, access control, business logic, and key flows</li>
+                            <li>Make security language and controls a part of user stories</li>
+						</ul>
+					</section>
+                    <section data-auto-animate>
+						<h3 style="margin-bottom: 30px;">A4 Insecure Design</h3>
+						<ul>
+							<li>Enforce plausibility checks from frontend to backend at each tier of the system</li>
+							<li>Validate critical flows’ resistance to the threat model via unit and integration tests. Compile use and misuse cases for every tier of the application</li>
+							<li>Separate tier layers and network layers on the system, based on the exposure and protection requirements</li>
+                            <li>Separate tenants robustly by design throughout all tiers</li>
+                            <li>Restrict resource consumption by user or service</li>
+						</ul>
+					</section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A5 Security Misconfiguration</h3>
+						<p>Security misconfiguration refers to security controls that are not secured or not configured correctly.</p>
+                        <ul>
+							<li>Security features not configured properly</li>
+							<li>Unnecessary features enabled</li>
+							<li>Default accounts not removed</li>
+                            <li>Error messages expose sensitive information</li>
+                            <li>The software is not up to date</li>
+						</ul>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A5 Security Misconfiguration</h3>
+                        <h4>Prevention:</h4>
+						<ul>
+							<li>Have a repeatable build process or “gold master”</li>
+							<li>Disable all unused services</li>
+							<li>Use tools to review settings</li>
+						</ul>
+					</section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px; font-size: 45px;">A6 Vulnerable and Outdated Components</h3>
+						<p>Modern applications contain a lot of
+                            third-party code.
+                            It’s hard to keep it all up to date.
+                            Attackers can enumerate the
+                            libraries you use, and develop
+                            exploits.</p>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 30px; font-size: 45px;">A6 Vulnerable and Outdated Components</h3>
+                        <h4>Prevention:</h4>
+						<ul>
+							<li>Remove any unused dependencies, unnecessary features, components, files, and documentation</li>
+							<li>Regularly inventory the versions of client-side and server-side components, as well as their dependencies through the use of OWASP Dependency-Check, retire.js, etc. </li>
+							<li>Use only official sources and secure links to obtain components.</li>
+                            <li>Scan for out-of-date components</li>
+						</ul>
+					</section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 30px;">A7 Identification and Authentication Failures</h3>
+						<p>This set of vulnerabilities was previously known as “Broken Authentication.” These may arise if an application:</p>
+                        <ul>
+							<li>Weak session management</li>
+							<li>Credential stuffing</li>
+							<li>Brute force</li>
+                            <li>Forgotten password</li>
+                            <li>No multi-factor authentication</li>
+                            <li>Sessions don’t expire</li>
+						</ul>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 30px;">A7 Identification and Authentication Failures</h3>
+                        <h4>Prevention:</h4>
+						<ul>
+							<li>Use good authentication libraries</li>
+							<li>Use MFA</li>
+							<li>Enforce strong passwords</li>
+                            <li>Detect and prevent brute force or stuffing attacks</li>
+						</ul>
+					</section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A8 Software and Data Integrity Failures</h3>
+                        <p style="font-size: 40px;">This new category on the OWASP list relates to vulnerabilities in software updates, critical data, and CI/CD pipelines whose integrity is not verified. </p>
+                        <p style="font-size: 40px;">For example, an application that relies on plugins, libraries, or modules from unverified and untrusted sources, repositories, or content delivery networks (CDNs) may be exposed to such a type of failure.</p>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 30px;">A8 Software and Data Integrity Failures</h3>
+                        <h4>Prevention:</h4>
+						<ul style="font-size: 40px;">
+							<li>Use mechanisms such as digital signatures</li>
+							<li>Institute a review process for code and configuration changes</li>
+							<li>Implement thorough segregation, configuration, and access control to your CI/CD pipeline</li>
+                            <li>Use a software supply chain security tool to make sure that components do not have any known vulnerabilities</li>
+						</ul>
+                    </section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px;">A9 Security Logging and Monitoring Failures</h3>
+                        <p style="font-size: 40px;">Previously known as “Insufficient Logging & Monitoring,” this category has been expanded to include more types of failures. While logging and monitoring are challenging to test, this category is essential because failures can impact accountability, visibility, incident alerting, and forensics.</p>
+                        <p style="font-size: 40px;">Your application can further be exposed to information leakage if logging and alerting events are visible to users or attackers.</p>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 30px;">A9 Security Logging and Monitoring Failures</h3>
+                        <h4>Prevention:</h4>
+						<ul style="font-size: 40px;">
+							<li>Log all login, access control, and server-side input validations failures with sufficient user context to spot suspicious or malicious accounts. </li>
+							<li>Avoid injections or attacks on the logging or monitoring systems by encoding log data properly</li>
+							<li>Implement an audit trail with integrity controls for high-value transactions</li>
+                            <li>Establish effective monitoring and alerting to detect suspicious activities and respond to them fast</li>
+						</ul>
+                    </section>
+				</section>
+
+                <section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px; font-size: 45px;">A10 Server-Side Request Forgery (SSRF)</h3>
+                        <p>Server-side request forgery issues arise when a web application does not validate the user-supplied URL when fetching a remote resource. This enables attackers to force the application to send a crafted request to an unexpected destination, even if protected by a firewall, VPN, or some other type of network access control list (ACL).</p>
+					</section>
+					<section data-auto-animate>
+						<h3 style="margin-bottom: 50px; font-size: 45px;">A10 Server-Side Request Forgery (SSRF)</h3>
+                        <h4 style="font-size: 35px;">Prevention at the network layer:</h4>
+						<ul style="font-size: 35px;">
+							<li>Reduce the impact of SSRF by segmenting the remote resource access functionality in separate networks</li>
+							<li>Block all but essential traffic by instituting “deny by default” network policies or network access control rules</li>
+						</ul>
+					</section>
+                    <section data-auto-animate>
+						<h3 style="margin-bottom: 20px; font-size: 45px;">A10 Server-Side Request Forgery (SSRF)</h3>
+                        <h4 style="font-size: 35px;">Prevention at the application layer:</h4>
+						<ul style="font-size: 35px;">
+							<li>All client-supplied input data must be sanitized and validated</li>
+							<li>Use a positive allow list to enforce the URL schema, port, and destination</li>
+                            <li>Do not send raw responses to clients</li>
+                            <li>Disable HTTP redirections</li>
+                            <li>Avoid attacks such as DNS rebinding and “time of check, time of use” (TOCTOU) race conditions by verifying the URL consistency</li>
+                            <li>Do not use a deny list or regular expression to mitigate SSRF – these can be bypassed in a variety of ways</li>
+						</ul>
+					</section>
+				</section>
+
 			</div>
+
 		</div>
 
 		<script src="dist/reveal.js"></script>
